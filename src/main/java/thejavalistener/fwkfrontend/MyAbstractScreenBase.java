@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
-import thejavalistener.fwkfrontend.awt.dialog.MyDialog;
-import thejavalistener.fwkfrontend.awt.dialog.ReturnablePanel;
-import thejavalistener.fwkfrontend.awt.panel.MyPanel;
-import thejavalistener.fwkfrontend.awt.searchbox.MySearchBox;
-import thejavalistener.fwkfrontend.awt.searchbox.MySearchBoxController;
-import thejavalistener.fwkfrontend.awt.variuos.MyAwt;
+import thejavalistener.fwkfrontend.etc.MyScreenMessageExchange;
+import thejavalistener.fwkfrontend.etc.MyScreenValuesExchange;
+import thejavalistener.fwkutils.awt.dialog.MyDialog;
+import thejavalistener.fwkutils.awt.dialog.ReturnablePanel;
+import thejavalistener.fwkutils.awt.panel.MyPanel;
+import thejavalistener.fwkutils.awt.searchbox.MySearchBox;
+import thejavalistener.fwkutils.awt.searchbox.MySearchBoxController;
+import thejavalistener.fwkutils.awt.variuos.MyAwt;
 import thejavalistener.fwkutils.various.MyException;
 
 @Component

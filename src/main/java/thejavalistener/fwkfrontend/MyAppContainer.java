@@ -27,10 +27,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import thejavalistener.fwkfrontend.awt.link.MyLink;
-import thejavalistener.fwkfrontend.awt.link.MyLinkedPane;
-import thejavalistener.fwkfrontend.awt.variuos.MyAwt;
-import thejavalistener.fwkutils.awt.KeyIdentifier;
+import thejavalistener.fwkfrontend.etc.Destroyable;
+import thejavalistener.fwkfrontend.etc.MyAppContainerStyle;
+import thejavalistener.fwkfrontend.etc.MyAppListener;
+import thejavalistener.fwkutils.awt.link.MyLink;
+import thejavalistener.fwkutils.awt.link.MyLinkedPane;
+import thejavalistener.fwkutils.awt.variuos.KeyIdentifier;
+import thejavalistener.fwkutils.awt.variuos.MyAwt;
 import thejavalistener.fwkutils.various.MyFileProperties;
 
 @Component

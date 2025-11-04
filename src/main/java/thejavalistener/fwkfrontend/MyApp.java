@@ -10,10 +10,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import thejavalistener.fwkfrontend.awt.dialog.MyDialog;
-import thejavalistener.fwkfrontend.awt.link.MyLinkedPane;
-import thejavalistener.fwkfrontend.awt.link.MyLinkedPaneStyle;
-import thejavalistener.fwkfrontend.awt.variuos.MyAwt;
+import thejavalistener.fwkfrontend.etc.MyAppListener;
+import thejavalistener.fwkutils.awt.dialog.MyDialog;
+import thejavalistener.fwkutils.awt.link.MyLinkedPane;
+import thejavalistener.fwkutils.awt.link.MyLinkedPaneStyle;
+import thejavalistener.fwkutils.awt.variuos.MyAwt;
 
 @Component
 @Scope("prototype")

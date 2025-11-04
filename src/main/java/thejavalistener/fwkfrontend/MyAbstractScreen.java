@@ -6,10 +6,10 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import thejavalistener.fwkfrontend.awt.dialog.MyInstantForm;
-import thejavalistener.fwkfrontend.awt.searchbox.MySearchBox;
-import thejavalistener.fwkfrontend.awt.searchbox.MySearchBoxController;
-import thejavalistener.fwkfrontend.awt.variuos.MyAwt;
+import thejavalistener.fwkutils.awt.dialog.MyInstantForm;
+import thejavalistener.fwkutils.awt.searchbox.MySearchBox;
+import thejavalistener.fwkutils.awt.searchbox.MySearchBoxController;
+import thejavalistener.fwkutils.awt.variuos.MyAwt;
 
 @Component
 public abstract class MyAbstractScreen extends MyAbstractScreenBase
