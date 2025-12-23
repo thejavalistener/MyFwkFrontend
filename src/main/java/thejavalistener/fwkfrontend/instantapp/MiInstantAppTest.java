@@ -2,8 +2,8 @@ package thejavalistener.fwkfrontend.instantapp;
 
 import javax.swing.JCheckBox;
 
+import thejava.listener.fwkutils.log.MyLog;
 import thejavalistener.fwkutils.various.MyColor;
-import thejavalistener.fwkutils.various.MyLog;
 
 public class MiInstantAppTest
 {
@@ -43,7 +43,6 @@ public class MiInstantAppTest
 		@Override
 		public void init(Object... args)
 		{
-			MyLog.println();
 		}
 
 		
@@ -56,13 +55,11 @@ public class MiInstantAppTest
 		@Override
 		public void start()
 		{
-			MyLog.println();
 		}
 
 		@Override
 		public boolean stop()
 		{
-			MyLog.println();
 			return !chb.isSelected();
 		}
 	}
@@ -85,25 +82,21 @@ public class MiInstantAppTest
 		@Override
 		public void init(Object... args)
 		{
-			MyLog.println();
 		}
 
 		@Override
 		public void dataUpdated()
 		{
-			MyLog.println();
 		}
 
 		@Override
 		public void start()
 		{
-			MyLog.println();
 		}
 
 		@Override
 		public boolean stop()
 		{
-			MyLog.println();
 			return true;
 		}
 	}

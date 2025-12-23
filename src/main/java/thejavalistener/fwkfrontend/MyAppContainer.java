@@ -34,7 +34,7 @@ import thejavalistener.fwkutils.awt.link.MyLink;
 import thejavalistener.fwkutils.awt.link.MyLinkedPane;
 import thejavalistener.fwkutils.awt.variuos.KeyIdentifier;
 import thejavalistener.fwkutils.awt.variuos.MyAwt;
-import thejavalistener.fwkutils.various.MyFileProperties;
+import thejavalistener.fwkutils.properties.MyFileProperties;
 
 @Component
 public class MyAppContainer
