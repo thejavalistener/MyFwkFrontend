@@ -1,6 +1,7 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
+
 
 group = 'com.github.thejavalistener'
 version = '1.0.0'
@@ -15,13 +16,10 @@ repositories {
 }
 
 dependencies {
-
-    // SPRING - sólo lo necesario para inyección de dependencias
-    implementation 'org.springframework:spring-context:5.3.14'
-    implementation 'org.springframework:spring-context-support:5.3.14'
-    implementation 'com.github.thejavalistener:MyFwkUtils:1.0.0'
-    
+    api 'com.github.thejavalistener:MyFwkBackend' //:1.1.0'
+    api 'com.github.thejavalistener:MyFwkUtils'   //:1.0.0'
 }
+   
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
