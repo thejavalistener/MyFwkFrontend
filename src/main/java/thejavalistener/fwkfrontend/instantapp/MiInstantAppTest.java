@@ -2,7 +2,6 @@ package thejavalistener.fwkfrontend.instantapp;
 
 import javax.swing.JCheckBox;
 
-import thejava.listener.fwkutils.log.MyLog;
 import thejavalistener.fwkutils.various.MyColor;
 
 public class MiInstantAppTest
