@@ -42,7 +42,6 @@ public class MyAppContainer
 	@Autowired
 	private MyFileProperties properties;
 	
-	
 	@Autowired
 	private ApplicationContext ctx;
 	

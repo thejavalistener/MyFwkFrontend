@@ -11,7 +11,7 @@ import thejavalistener.fwkutils.awt.searchbox.MySearchBox;
 import thejavalistener.fwkutils.awt.searchbox.MySearchBoxController;
 import thejavalistener.fwkutils.awt.variuos.MyAwt;
 
-@Component
+//@Component
 public abstract class MyAbstractScreen extends MyAbstractScreenBase
 {
 	private static ArrayList<MyAbstractScreen> instancias = new ArrayList<>();

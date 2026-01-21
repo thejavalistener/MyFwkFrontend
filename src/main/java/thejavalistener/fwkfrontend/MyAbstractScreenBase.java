@@ -19,7 +19,7 @@ import thejavalistener.fwkutils.awt.searchbox.MySearchBoxController;
 import thejavalistener.fwkutils.awt.variuos.MyAwt;
 import thejavalistener.fwkutils.various.MyException;
 
-@Component
+//@Component
 public abstract class MyAbstractScreenBase extends MyPanel implements ReturnablePanel
 {
 	@Autowired
