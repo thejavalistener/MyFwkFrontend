@@ -6,8 +6,6 @@ import java.util.Map;
 import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Component;
 
 import thejavalistener.fwkfrontend.etc.MyScreenMessageExchange;
 import thejavalistener.fwkfrontend.etc.MyScreenValuesExchange;
@@ -28,8 +26,8 @@ public abstract class MyAbstractScreenBase extends MyPanel implements Returnable
 	@Autowired
 	private MyScreenMessageExchange messages;
 	
-	@Autowired
-	private JavaMailSender javaMailSender;
+//	@Autowired
+//	private JavaMailSender javaMailSender;
 	
 //	@Autowired
 //	private MyProperties properties;

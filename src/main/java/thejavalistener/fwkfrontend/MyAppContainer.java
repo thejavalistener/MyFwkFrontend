@@ -24,7 +24,7 @@ import javax.swing.JTextPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 import thejavalistener.fwkfrontend.etc.Destroyable;
@@ -372,11 +372,14 @@ public class MyAppContainer
 				// cierro el contexto
 				if( ctx!=null )
 				{
-					ClassPathXmlApplicationContext x = (ClassPathXmlApplicationContext)ctx;
-					if( x.isActive() )
-					{
-						x.close();
-					}
+//					ClassPathXmlApplicationContext x = (ClassPathXmlApplicationContext)ctx;
+//					if( x.isActive() )
+//					{
+//						x.close();
+//					}
+
+					ConfigurableApplicationContext x = (ConfigurableApplicationContext)ctx;
+					if( x.isActive() ) x.close();
 				}
 												
 				// cierro la ventana
