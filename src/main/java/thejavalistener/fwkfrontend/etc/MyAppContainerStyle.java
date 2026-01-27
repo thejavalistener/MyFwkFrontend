@@ -12,8 +12,5 @@ public class MyAppContainerStyle
 	public MyAppContainerStyle()
 	{
 		appLinkedStyle.setLinkPaneInsets(new Insets(10,3,0,3));
-//		screenLinkedStyle.setLinkPaneInsets(new Insets(0,0,0,0));
-//		screenLinkedStyle.linkStyle.setLinkInsets(new Insets(0,0,0,0));
-//		screenLinkedStyle.linkStyle.setLinkBackgroundInsets(new Insets(0,0,0,0));
 	}
 }

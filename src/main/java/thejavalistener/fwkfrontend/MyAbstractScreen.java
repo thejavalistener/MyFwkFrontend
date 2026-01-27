@@ -4,8 +4,7 @@ import java.awt.Window;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
-
+import thejava.listener.fwkutils.log.MyLogs;
 import thejavalistener.fwkutils.awt.dialog.MyInstantForm;
 import thejavalistener.fwkutils.awt.searchbox.MySearchBox;
 import thejavalistener.fwkutils.awt.searchbox.MySearchBoxController;
@@ -23,8 +22,11 @@ public abstract class MyAbstractScreen extends MyAbstractScreenBase
 	public void stop(){};
 	public void destroy(){};
 	
-//	private Object returnValue;
-//
+	public void    _init() {MyLogs.get().debug("Quitar public y dejar friendly este método");};
+	public void   _start() {MyLogs.get().debug("Quitar public y dejar friendly este método");};
+	public void    _stop() {MyLogs.get().debug("Quitar public y dejar friendly este método");};
+	public void _destroy() {MyLogs.get().debug("Quitar public y dejar friendly este método");};
+	
 	protected void onDataUpdated() {}
 	protected void createUI() {}
 

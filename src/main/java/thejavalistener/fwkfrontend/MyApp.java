@@ -10,6 +10,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.beust.jcommander.internal.Console;
+
 import thejavalistener.fwkfrontend.etc.MyAppListener;
 import thejavalistener.fwkutils.awt.dialog.MyDialog;
 import thejavalistener.fwkutils.awt.link.MyLinkedPane;
@@ -82,6 +84,7 @@ public class MyApp
 
 		if( currentScreen!=null )
 		{
+			currentScreen._stop();
 			currentScreen.stop();
 		}		
 		
@@ -91,12 +94,14 @@ public class MyApp
 		currentScreen.createUI();
 		currentScreen.onDataUpdated();
 		currentScreen.preInit();
+		currentScreen._init();
 		currentScreen.init();
 		
 		screens.addTab(screen.getName(),screen,true);
 
 		if( state==STARTED )
 		{
+			currentScreen._start();
 			currentScreen.start();
 		}
 		
@@ -111,7 +116,9 @@ public class MyApp
 		}
 		
 		// ciclo de vida
+		currentScreen._stop();
 		currentScreen.stop();
+		currentScreen._destroy();
 		currentScreen.destroy();
 		
 		// remuevo la solapa
@@ -121,6 +128,7 @@ public class MyApp
 		if( getScreenCount()>0 )
 		{
 			currentScreen = (MyAbstractScreen)screens.getComponent(getScreenCount()-1);
+			currentScreen._start();
 			currentScreen.start();
 		}		
 	}
@@ -130,6 +138,7 @@ public class MyApp
 	{
 		if( currentScreen!=null )
 		{
+			currentScreen._stop();
 			currentScreen.stop();
 		}		
 		
@@ -141,27 +150,25 @@ public class MyApp
 
 		MyDialog dlg = new MyDialog(getMyAppContainer().c(),screen,screen.getName());
 		dlg.setMyDialogListener(l->{
+			screen._stop();
 			screen.stop();
+			screen._destroy();
 			screen.destroy();
-			currentScreen.start();});
+			currentScreen._start();
+			currentScreen.start();
+		});
 		
 		screen.createUI();
 		screen.onDataUpdated();
 		screen.preInit();
+		screen._init();
 		screen.init();
+		screen._start();
 		screen.start();
 
 
 		return dlg.configurator();
-//		
-//		MyDialogConfigurator cfg = new MyDialogConfigurator(dlg);
-//		return cfg;
 	}
-		
-//	public void changeTopScreen(Class<? extends MyAbstractScreen2> newScreenClass,MyAbstractScreen2 currScreen,Object ...args)
-//	{
-//		currScreen.exit(showScreen(newScreenClass,args));
-//	}
 		
 	public int getScreenCount()
 	{
@@ -209,6 +216,7 @@ public class MyApp
 		state = STARTED;
 		if( currentScreen!=null )
 		{
+			currentScreen._start();
 			currentScreen.start();
 		}
 	}
@@ -216,6 +224,7 @@ public class MyApp
 	void stop()
 	{
 		state = STOPED;
+		currentScreen._stop();
 		currentScreen.stop();
 	}
 	
@@ -235,15 +244,21 @@ public class MyApp
 	private Map<?,?> currState = null;
 	public void setDisabledTemporally(boolean disable)
 	{
+		setDisabledTemporally(disable,new java.awt.Component[]{});
+	}
+	
+	public void setDisabledTemporally(boolean disable,java.awt.Component ...excepted)
+	{
 		if( disable )
 		{
-			currState = MyAwt.disableTemporally(c());
+			currState = MyAwt.disableTemporally(c(),excepted);
 		}
 		else
 		{
 			MyAwt.restoreDisabled(currState);			
 		}
 	}
+
 
 	
 	class EscuchaScreens implements ActionListener
