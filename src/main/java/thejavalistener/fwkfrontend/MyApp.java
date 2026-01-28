@@ -1,5 +1,6 @@
 package thejavalistener.fwkfrontend;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.beust.jcommander.internal.Console;
 
+import thejava.listener.fwkutils.log.MyLogs;
 import thejavalistener.fwkfrontend.etc.MyAppListener;
 import thejavalistener.fwkutils.awt.dialog.MyDialog;
 import thejavalistener.fwkutils.awt.link.MyLinkedPane;
@@ -45,9 +47,11 @@ public class MyApp
 	public MyApp(String appName)
 	{
 		screens = new MyLinkedPane(MyLinkedPane.HORIZONTAL);
+
 		screens.setSeparatorBeforeLinks('»');
 		screens.setActionListener(new EscuchaScreens());
 		this.appName = appName;
+		
 	}
 	
 	public void setAppListener(MyAppListener listener)

@@ -1,7 +1,7 @@
 package thejavalistener.fwkfrontend;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
+import java.awt.Color;
 import java.awt.KeyboardFocusManager;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 import javax.swing.JFrame;
-import javax.swing.JTextPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -64,6 +63,11 @@ public class MyAppContainer
 		applications = new MyLinkedPane(MyLinkedPane.VERTICAL);
 		applications.setActionListener(new EscuchaApplications());
 		jFrame.add(applications.c(),BorderLayout.CENTER);		
+	}
+	
+	public void setBackground(Color c)
+	{
+		applications.setBackground(c);
 	}
 	
 	public int getMyAppCount()
@@ -156,22 +160,22 @@ public class MyAppContainer
 	// ------------- HOT KEY ------------
 
 		
-    public static JTextPane TRUCHOOfindTextPane(java.awt.Component component) {
-        if (component instanceof JTextPane) {
-            return (JTextPane) component; // Encontrado, lo retornamos
-        }
-
-        if (component instanceof Container) {
-            for (java.awt.Component child : ((Container) component).getComponents()) {
-                JTextPane found = TRUCHOOfindTextPane(child); // Llamada recursiva
-                if (found != null) {
-                    return found;
-                }
-            }
-        }
-
-        return null; // No encontrado
-    }
+//    public static JTextPane TRUCHOOfindTextPane(java.awt.Component component) {
+//        if (component instanceof JTextPane) {
+//            return (JTextPane) component; // Encontrado, lo retornamos
+//        }
+//
+//        if (component instanceof Container) {
+//            for (java.awt.Component child : ((Container) component).getComponents()) {
+//                JTextPane found = TRUCHOOfindTextPane(child); // Llamada recursiva
+//                if (found != null) {
+//                    return found;
+//                }
+//            }
+//        }
+//
+//        return null; // No encontrado
+//    }
 	
 
     private boolean appsAreDisplayed = true;
@@ -309,7 +313,9 @@ public class MyAppContainer
 		{
 			MyApp app = getMyApp(i);
 			app.setStyle(style.screenLinkedStyle);
-		}		
+		}	
+		
+		setBackground(style.appLinkedStyle.linkPanelBackground);
 	}
 	
 	public JFrame c()
