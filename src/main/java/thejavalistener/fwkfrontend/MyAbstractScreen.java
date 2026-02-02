@@ -47,6 +47,11 @@ public abstract class MyAbstractScreen extends MyAbstractScreenBase
 	{
 	}
 	
+	public void pushScreen(Class<? extends MyAbstractScreen> screenClass,Object ...args)
+	{
+		getMyApp().pushScreen(screenClass,args);
+	}
+	
 	public void allowAppSwitch(boolean b)
 	{
 		getMyApp().allowSwitch(b);
