@@ -51,6 +51,8 @@ public class MyAppContainer
 	private MyApp currApp = null;
 	private MyApp prevApp = null;
 	
+	private boolean shutdownDatabaseOnClose = false;
+	
 	private MyAppContainerStyle style = new MyAppContainerStyle();
 	
 	public MyAppContainer()
@@ -63,6 +65,11 @@ public class MyAppContainer
 		applications = new MyLinkedPane(MyLinkedPane.VERTICAL);
 		applications.setActionListener(new EscuchaApplications());
 		jFrame.add(applications.c(),BorderLayout.CENTER);		
+	}
+	
+	public void setShutdownDatabaseOnClose(boolean b)
+	{
+		this.shutdownDatabaseOnClose = b;
 	}
 	
 	public void setBackground(Color c)
@@ -359,12 +366,15 @@ public class MyAppContainer
 					app.destroy();
 				}
 				
-				PreparedStatement pstm = null;
-				
-				// cierro la database
-				Connection con = ds.getConnection();
-				pstm = con.prepareStatement("shutdown");
-				pstm.execute();
+				if( shutdownDatabaseOnClose )
+				{
+					PreparedStatement pstm = null;
+					
+					// cierro la database
+					Connection con = ds.getConnection();
+					pstm = con.prepareStatement("shutdown");
+					pstm.execute();
+				}
 				
 				// destructores
 				List<Destroyable> lst = new ArrayList<>(ctx.getBeansOfType(Destroyable.class).values());
